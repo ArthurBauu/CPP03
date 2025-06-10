@@ -1,4 +1,4 @@
-#include "claptrap.hpp"
+#include "ClapTrap.hpp"
 
 // Default constructor
 ClapTrap::ClapTrap() : _name("Unnamed"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
@@ -32,7 +32,6 @@ ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap " << _name << " destroyed" << std::endl;
 }
 
-// Member functions
 void ClapTrap::attack(const std::string &target) {
 	if (_energyPoints <= 0 || _hitPoints <= 0) {
 		std::cout << "ClapTrap " << _name << " cannot attack: no energy or hit points!" << std::endl;
