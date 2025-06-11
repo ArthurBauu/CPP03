@@ -1,21 +1,30 @@
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main() {
-	ClapTrap a("Terminator");
-	a.attack("Target Dummy");
-	a.takeDamage(3);
-	a.beRepaired(5);
-	a.attack("Enemy");
+	std::cout << "=== Construction par défaut ===" << std::endl;
+	ScavTrap s1;
+	std::cout << std::endl;
 
-	ClapTrap b = a;
-	b.takeDamage(10);
-	b.beRepaired(3);
+	std::cout << "=== Construction avec nom ===" << std::endl;
+	ScavTrap s2("Serena");
+	std::cout << std::endl;
 
-	ClapTrap c;
-	c.attack("Another Target");
-	c.takeDamage(2);
-	c.beRepaired(1);
+	std::cout << "=== Test attaque ===" << std::endl;
+	s2.attack("un pauvre robot");
+	std::cout << std::endl;
 
+	std::cout << "=== Test mode Gate Keeper ===" << std::endl;
+	s2.guardGate();
+	std::cout << std::endl;
 
+	std::cout << "=== Test copie ===" << std::endl;
+	ScavTrap s3(s2);
+	std::cout << std::endl;
+
+	std::cout << "=== Test assignation ===" << std::endl;
+	s1 = s3;
+	std::cout << std::endl;
+
+	std::cout << "=== Fin du programme ===" << std::endl;
 	return 0;
 }

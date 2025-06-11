@@ -6,7 +6,7 @@ ClapTrap::ClapTrap() : _name("Unnamed"), _hitPoints(10), _energyPoints(10), _att
 }
 
 // Custom constructor
-ClapTrap::ClapTrap(const std::string &name, unsigned int hp, unsigned int ep, unsigned int ad) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+ClapTrap::ClapTrap(const std::string &name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
 	std::cout << "ClapTrap " << _name << " created" << std::endl;
 }
 
@@ -19,6 +19,7 @@ ClapTrap::ClapTrap(const ClapTrap &other) {
 // Copy assignment operator
 ClapTrap &ClapTrap::operator=(const ClapTrap &other) {
 	if (this != &other) {
+		std::cout << "ClapTrap assignment operator called" << std::endl;
 		_name = other._name;
 		_hitPoints = other._hitPoints;
 		_energyPoints = other._energyPoints;

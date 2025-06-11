@@ -1,22 +1,26 @@
-NAME = claptrap
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-
-SRCS = main.cpp claptrap.cpp 
+SRCS = ClapTrap.cpp ScavTrap.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
-all: $(NAME)
+TEST_SRCS = ClapTrap.cpp ScavTrap.cpp tests.cpp
+TEST_OBJS = $(TEST_SRCS:.cpp=.o)
+TEST_EXE = test_exec
 
-$(NAME): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
+all: $(OBJS)
+	$(CC) $(CFLAGS) -o ClapTrap $(OBJS)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(TEST_OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f ClapTrap $(TEST_EXE)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+test: $(TEST_OBJS)
+	$(CC) $(CFLAGS) -o $(TEST_EXE) $(TEST_OBJS)
+	./$(TEST_EXE)
+
+.PHONY: all clean fclean re test
