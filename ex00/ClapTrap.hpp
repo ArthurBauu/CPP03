@@ -20,7 +20,10 @@ public:
 
 	void attack(const std::string &target);
 	void takeDamage(unsigned int amout);
-	void beRepaired(unsigned int amount);	
+	void beRepaired(unsigned int amount);
+
+	// For debugging purposes
+	void printStatus() const;
 };
 
 

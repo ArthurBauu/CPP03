@@ -10,7 +10,7 @@ int main() {
 	std::cout << std::endl;
 
 	std::cout << "=== Test attaque ===" << std::endl;
-	s2.attack("un pauvre robot");
+	s2.attack("Handsome Jack");
 	std::cout << std::endl;
 
 	std::cout << "=== Test mode Gate Keeper ===" << std::endl;

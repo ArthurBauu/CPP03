@@ -5,14 +5,14 @@ ScavTrap::ScavTrap() : ClapTrap("Unnamed") {
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
-	std::cout << "ScavTrap created (default)" << std::endl;
+	std::cout << "ScavTrap " << _name << " created using spare parts founds on disconected (default)" << std::endl;
 }
 
 ScavTrap::ScavTrap(const std::string &name) : ClapTrap(name) {
 	_hitPoints = 100;
 	_energyPoints = 50;
 	_attackDamage = 20;
-	std::cout << "ScavTrap " << _name << " created" << std::endl;
+	std::cout << "ScavTrap " << _name << " created using spare parts founds on disconected" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
@@ -37,7 +37,7 @@ ScavTrap &ScavTrap::operator=(const ScavTrap &other)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap " << _name << " destroyed" << std::endl;
+	std::cout << "ScavTrap " << _name << " spare parts return to the disconected" << std::endl;
 }
 
 
